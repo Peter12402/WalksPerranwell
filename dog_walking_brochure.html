@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional dog walking services in your local area. Reliable, caring, and affordable pet care with £15/hour rates. Book your dog's daily walk today!">
+    <meta name="keywords" content="dog walking, pet care, dog walker, local pet services, dog exercise, pet sitting">
+    <meta name="author" content="Professional Dog Walking Services">
+    <title>Professional Dog Walking Services | Local Pet Care</title>
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Professional Dog Walking Services">
+    <meta property="og:description" content="Reliable and caring dog walking services in your local area. £15/hour with flexible scheduling.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+    
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #667eea;
+            --success-color: #27ae60;
+            --text-dark: #2c3e50;
+            --text-light: #555;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --shadow-light: 0 4px 10px rgba(0,0,0,0.05);
+            --shadow-medium: 0 8px 25px rgba(0,0,0,0.08);
+            --shadow-heavy: 0 20px 40px rgba(0,0,0,0.1);
+            --border-radius: 15px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--accent-color) 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        .header {
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="60" r="2.5" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="70" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            letter-spacing: -2px;
+        }
+        
+        .tagline {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .cta-primary {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .cta-primary:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        /* Main Content */
+        .main-content {
+            background: var(--bg-white);
+            margin: -30px 20px 0;
+            border-radius: 20px 20px 0 0;
+            box-shadow: var(--shadow-heavy);
+            position: relative;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, var(--bg-light), #e9ecef);
+            padding: 50px 30px;
+            border-radius: var(--border-radius);
+            margin: 40px 0;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .about h2 {
+            color: var(--text-dark);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .about p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .service-card {
+            background: var(--bg-white);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            border: 1px solid #eee;
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .service-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* Requirements Section */
+        .requirements {
+            background: var(--bg-light);
+            padding: 50px 30px;
+            border-radius: var(--border-radius);
+            margin: 40px 0;
+        }
+        
+        .requirements h2 {
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        .req-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        
+        .req-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 25px;
+            background: var(--bg-white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+        
+        .req-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .req-icon {
+            color: var(--success-color);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            margin-top: 2px;
+            min-width: 24px;
+        }
+        
+        .req-content strong {
+            color: var(--text-dark);
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            background: linear-gradient(135deg, var(--accent-color), #764ba2);
+            color: white;
+            padding: 60px 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing::before {
+            content: '🐕 🐾 🎾 🏃‍♂️';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: drift 30s ease-in-out infinite;
+        }
+        
+        @keyframes drift {
+            0%, 100% { transform: translateX(-50px); }
+            50% { transform: translateX(50px); }
+        }
+        
+        .pricing h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .price {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 30px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .price-note {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--secondary-color);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .contact h2 {
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .contact-item {
+            padding: 20px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-3px);
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .cta-secondary {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin: 30px 15px 0;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        }
+        
+        .cta-secondary:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(52, 152, 219, 0.4);
+        }
+        
+        .testimonial {
+            margin-top: 40px;
+            padding: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-style: italic;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a252f;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .main-content {
+                margin: -20px 10px 0;
+                border-radius: 15px 15px 0 0;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .req-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .price {
+                font-size: 3rem;
+            }
+            
+            .cta-secondary {
+                display: block;
+                margin: 15px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .about, .requirements, .pricing {
+                padding: 30px 20px;
+                margin: 30px 0;
+            }
+        }
+        
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Focus styles for keyboard navigation */
+        .cta-primary:focus,
+        .cta-secondary:focus {
+            outline: 3px solid #ffd700;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🐾</div>
+                <h1 class="main-title">Premium Dog Walking Services</h1>
+                <p class="tagline">Dedicated, Reliable & Passionate Pet Care in Your Local Area</p>
+                <a href="#contact" class="cta-primary">Book a Walk Today</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="section">
+                <div class="about">
+                    <h2>Your Dog Deserves the Best Care</h2>
+                    <p>I'm an enthusiastic and responsible individual who is passionate about dogs and committed to providing exceptional care for your beloved pet. While I'm new to professional dog walking, I bring dedication, reliability, and a genuine love for animals. Currently a cat owner, I'm eager to expand my experience with dogs and prove that I can provide the loving care your pet deserves.</p>
+                </div>
+            </section>
+
+            <section class="section" id="services">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive pet care tailored to your dog's unique needs</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <span class="service-icon">🚶‍♂️</span>
+                        <h3>Daily Walks</h3>
+                        <p>Regular exercise tailored to your dog's needs and energy level, ensuring they stay healthy, happy, and well-socialized.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <span class="service-icon">🎾</span>
+                        <h3>Interactive Playtime</h3>
+                        <p>Engaging play sessions to keep your dog mentally stimulated and physically active with games and activities they love.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <span class="service-icon">📱</span>
+                        <h3>Real-time Updates</h3>
+                        <p>Photo updates and detailed messages to keep you informed about your dog's activities, mood, and wellbeing throughout the day.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <span class="service-icon">🏠</span>
+                        <h3>Pet Sitting</h3>
+                        <p>Short-term pet sitting services for when you need someone reliable and caring to look after your dog in your absence.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="about">
+                <div class="requirements">
+                    <h2>What You Can Expect From Me</h2>
+                    <div class="req-grid">
+                        <div class="req-item">
+                            <span class="req-icon">✅</span>
+                            <div class="req-content">
+                                <strong>Reliability & Punctuality</strong>
+                                I'm committed to being dependable and on-time for all scheduled walks and appointments, respecting your schedule.
+                            </div>
+                        </div>
+                        
+                        <div class="req-item">
+                            <span class="req-icon">✅</span>
+                            <div class="req-content">
+                                <strong>Safety First Approach</strong>
+                                Your dog's safety is my priority with proper leash handling, route awareness, and emergency preparedness.
+                            </div>
+                        </div>
+                        
+                        <div class="req-item">
+                            <span class="req-icon">✅</span>
+                            <div class="req-content">
+                                <strong>Pet Care Experience</strong>
+                                As a current cat owner, I understand pet behavior, responsibility, and the importance of routine care.
+                            </div>
+                        </div>
+                        
+                        <div class="req-item">
+                            <span class="req-icon">✅</span>
+                            <div class="req-content">
+                                <strong>Physical Fitness</strong>
+                                I'm physically capable of handling dogs of various sizes and energy levels with confidence and care.
+                            </div>
+                        </div>
+                        
+                        <div class="req-item">
+                            <span class="req-icon">✅</span>
+                            <div class="req-content">
+                                <strong>Clear Communication</strong>
+                                I provide regular updates, clear scheduling, and am always available to discuss your pet's needs.
+                            </div>
+                        </div>
+                        
+                        <div class="req-item">
+                            <span class="req-icon">✅</span>
+                            <div class="req-content">
+                                <strong>Learning & Adaptability</strong>
+                                I'm eager to learn and adapt to each dog's unique personality, preferences, and special requirements.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="pricing">
+                <div class="pricing">
+                    <h2>Competitive & Fair Pricing</h2>
+                    <div class="price">£15<span style="font-size: 0.6em;">/hour</span></div>
+                    <p class="price-note">Quality care at affordable rates • No hidden fees • Flexible scheduling available</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Ready to Give Your Dog the Care They Deserve?</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <h3>Get In Touch</h3>
+                    <p>Contact me to discuss your dog's specific needs and schedule</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🤝</div>
+                    <h3>Meet & Greet</h3>
+                    <p>Free consultation to ensure we're the right fit for your pet</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📅</div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Available to work around your busy lifestyle and routine</p>
+                </div>
+            </div>
+            
+            <a href="mailto:your-email@example.com" class="cta-secondary">Send Email</a>
+            <a href="tel:+44-your-number" class="cta-secondary">Call Now</a>
+            
+            <div class="testimonial">
+                <p>"I'm passionate about proving I can provide excellent dog care, and I'm committed to earning your trust through reliable, loving service for your pet. Let me show you how much I care about your furry family member!"</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Professional Dog Walking Services | Serving Your Local Area with Love & Care</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Simple animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .req-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.3s ease';
+    </script>
+</head>
+</html>
